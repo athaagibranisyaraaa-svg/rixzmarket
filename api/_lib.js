@@ -1,0 +1,5 @@
+import { createClient } from "@supabase/supabase-js";
+export function db(){const u=process.env.SUPABASE_URL,k=process.env.SUPABASE_SERVICE_ROLE_KEY;if(!u||!k)throw Error("Supabase server environment is not configured");return createClient(u,k,{auth:{autoRefreshToken:false,persistSession:false}});}
+export async function getUser(req){const token=(req.headers.authorization||"").replace(/^Bearer\s+/i,"");if(!token)return null;const c=createClient(process.env.SUPABASE_URL,process.env.SUPABASE_ANON_KEY,{auth:{autoRefreshToken:false,persistSession:false}});const {data,error}=await c.auth.getUser(token);if(error||!data.user)return null;const {data:p}=await db().from("profiles").select("username,role").eq("id",data.user.id).single();return p?{id:data.user.id,...p}:null;}
+export async function ownerOnly(req,res){const u=await getUser(req);if(!u){res.status(401).json({error:"Silakan login."});return null;}if(u.role!=="owner"){res.status(403).json({error:"Akses khusus owner."});return null;}return u;}
+export function jsonError(res,e){console.error(e);res.status(500).json({error:"Server error. Periksa konfigurasi backend."});}

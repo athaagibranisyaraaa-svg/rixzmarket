@@ -1,0 +1,2 @@
+import {db,ownerOnly,jsonError} from "../_lib.js";
+export default async function handler(req,res){if(req.method!=="PUT")return res.status(405).json({error:"Method not allowed"});try{const u=await ownerOnly(req,res);if(!u)return;if(typeof req.body?.enabled!=="boolean")return res.status(400).json({error:"enabled must be boolean"});const {error}=await db().from("site_settings").upsert({key:"maintenance",value:req.body.enabled},{onConflict:"key"});if(error)throw error;res.status(200).json({ok:true});}catch(e){jsonError(res,e);}}

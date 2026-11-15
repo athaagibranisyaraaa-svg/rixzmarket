@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#050914">
+<meta name="description" content="Rixz Hosting — Cloud VPS dan game server.">
+<title>RIXZ HOSTING — Cloud Infrastructure</title><link rel="stylesheet" href="/style.css">
+</head><body>
+<div id="maintenance-screen" class="maintenance hidden"><img src="/assets/rixz-hosting-logo.png" alt="Rixz Hosting"><h1>We’ll be right back.</h1><p>Rixz Hosting sedang melakukan maintenance untuk meningkatkan kualitas layanan.</p><a href="https://wa.me/6285791115059">Hubungi support</a></div>
+<div id="auth-screen" class="auth-shell">
+ <div class="auth-brand"><img src="/assets/rixz-hosting-logo.png" alt="Rixz Hosting"><p>POWER YOUR PROJECT WITH RIXZ HOSTING</p></div>
+ <section class="auth-card"><div class="tabs"><button class="tab active" data-tab="login">Login</button><button class="tab" data-tab="register">Create account</button></div>
+  <form id="login-form" class="auth-form"><div class="eyebrow">SECURE MEMBER ACCESS</div><h1>Welcome <em>back.</em></h1><p>Masuk untuk mengelola layanan cloud kamu.</p>
+   <label>Username<input id="login-username" autocomplete="username" required minlength="3" placeholder="Username"></label>
+   <label>Password<input id="login-password" type="password" autocomplete="current-password" required placeholder="Password"></label>
+   <button class="btn primary full" type="submit">Login to dashboard <span>→</span></button>
+  </form>
+  <form id="register-form" class="auth-form hidden"><div class="eyebrow">JOIN THE CLOUD</div><h1>Create <em>account.</em></h1><p>Daftar menggunakan username dan password.</p>
+   <label>Username<input id="register-username" autocomplete="username" required minlength="3" maxlength="24" pattern="[A-Za-z0-9_]+" placeholder="Username"></label>
+   <label>Password<input id="register-password" type="password" autocomplete="new-password" required minlength="8" placeholder="Minimal 8 karakter"></label>
+   <button class="btn primary full" type="submit">Create account <span>→</span></button>
+  </form><p class="form-message" id="auth-message" role="status"></p>
+  <p class="auth-help">Need help? <a href="https://wa.me/6285791115059">WhatsApp</a> · <a href="https://t.me/cocovrix">Telegram</a></p>
+ </section><small class="copyright">© 2026 Rixz Hosting</small>
+</div>
+<div id="app-screen" class="app hidden">
+ <aside class="sidebar"><div class="side-logo"><img src="/assets/rixz-hosting-logo.png" alt="Rixz Hosting"></div>
+  <div class="side-label">WORKSPACE</div><button class="side-link active" data-page="home">⌂ <span>Overview</span></button>
+  <div class="side-label">CLOUD SERVICES</div><button class="side-link" data-page="digitalocean">◈ <span>DigitalOcean</span></button><button class="side-link" data-page="linode">⬡ <span>Linode</span></button><button class="side-link" data-page="pterodactyl">▦ <span>Pterodactyl</span></button>
+  <div id="owner-nav" class="hidden"><div class="side-label">MANAGEMENT</div><button class="side-link" data-page="owner">⚙ <span>Owner console</span></button></div>
+  <div class="sidebar-bottom"><button id="logout-button" class="side-link">↪ <span>Logout</span></button><small>RIXZ HOSTING · v1.1</small></div>
+ </aside>
+ <main class="main"><header class="topbar"><div><span class="status-dot"></span> All systems operational</div><div class="user-area"><a id="deposit-quick-link" class="btn outline hidden" target="_blank" rel="noopener">＋ Deposit</a><span id="role-chip" class="role-chip">MEMBER</span><b id="current-user">user</b><div class="avatar" id="user-avatar">R</div></div></header>
+  <section id="page-home" class="page"><div class="welcome"><div class="eyebrow">CLOUD CONTROL CENTER</div><h1>Build without<br><em>limits.</em></h1><p>Infrastructure yang cepat, stabil, dan siap menemani project kamu. Semua layanan dalam satu dashboard.</p></div>
+   <div class="stats"><article><span>PROVIDERS</span><b>03</b><small>Cloud & game server</small></article><article><span>YOUR ACCOUNT</span><b id="home-role">MEMBER</b><small>Account access level</small></article><article><span>SUPPORT</span><b>24/7</b><small>WhatsApp & Telegram</small></article></div>
+   <h2 class="section-title">Explore our services</h2><div class="service-grid">
+    <button class="service-card" data-go="digitalocean"><div class="service-icon do">◈</div><h3>DigitalOcean VPS</h3><p>Deploy cloud compute untuk aplikasi, website, dan bot kamu.</p><b>Explore service ↗</b></button>
+    <button class="service-card" data-go="linode"><div class="service-icon lin">⬡</div><h3>Linode VPS</h3><p>Virtual private server dengan resource fleksibel.</p><b>Explore service ↗</b></button>
+    <button class="service-card" data-go="pterodactyl"><div class="service-icon ptero">▦</div><h3>Pterodactyl Panel</h3><p>Kelola game server dari panel yang praktis.</p><b>Explore service ↗</b></button>
+   </div><div class="support-banner"><div><b>We’re here to help.</b><p>Ada kendala saat menggunakan layanan Rixz Hosting?</p></div><a class="btn outline" href="https://wa.me/6285791115059">WhatsApp support ↗</a><a class="telegram" href="https://t.me/cocovrix">@cocovrix</a></div>
+  </section>
+  <section id="page-digitalocean" class="page hidden"><div class="eyebrow">CLOUD COMPUTE · PROVIDER 01</div><h1>DigitalOcean <em>VPS.</em></h1><p class="muted">Pilih layanan DigitalOcean melalui halaman tujuan yang diatur owner.</p><div class="provider-box"><div class="provider-logo do">◈</div><h2>DigitalOcean Cloud</h2><p id="digitalocean-desc">Cloud infrastructure for your next big idea.</p><a id="digitalocean-link" class="btn primary hidden" target="_blank" rel="noopener">Continue to DigitalOcean ↗</a><span class="not-configured" id="digitalocean-empty">Service URL belum diatur oleh owner.</span></div></section>
+  <section id="page-linode" class="page hidden"><div class="eyebrow">CLOUD COMPUTE · PROVIDER 02</div><h1>Linode <em>VPS.</em></h1><p class="muted">Pilih layanan Linode melalui halaman tujuan yang diatur owner.</p><div class="provider-box"><div class="provider-logo lin">⬡</div><h2>Linode Cloud</h2><p id="linode-desc">Reliable compute for every workload.</p><a id="linode-link" class="btn primary hidden" target="_blank" rel="noopener">Continue to Linode ↗</a><span class="not-configured" id="linode-empty">Service URL belum diatur oleh owner.</span></div></section>
+  <section id="page-pterodactyl" class="page hidden"><div class="eyebrow">GAME SERVER · PROVIDER 03</div><h1>Pterodactyl <em>Panel.</em></h1><p class="muted">Akses panel game server yang disediakan Rixz Hosting.</p><div class="provider-box"><div class="provider-logo ptero">▦</div><h2>Game server control</h2><p id="pterodactyl-desc">Your game server, your control.</p><a id="pterodactyl-link" class="btn primary hidden" target="_blank" rel="noopener">Open game panel ↗</a><span class="not-configured" id="pterodactyl-empty">Panel URL belum diatur oleh owner.</span></div></section>
+  <section id="page-owner" class="page hidden"><div class="eyebrow">ADMINISTRATION · PRIVATE</div><h1>Owner <em>console.</em></h1><p class="muted">Kelola URL deposit, tujuan layanan, kapasitas integrasi, dan maintenance.</p>
+   <div class="owner-grid"><form id="settings-form" class="settings-card"><h2>Service & deposit URL</h2>
+    <label>Deposit / top-up URL<input id="setting-deposit" type="url" placeholder="https://payment-domain.com/deposit"></label>
+    <label>DigitalOcean service URL<input id="setting-digitalocean" type="url" placeholder="https://your-store.com/digitalocean"></label><label>DigitalOcean description<input id="desc-digitalocean" maxlength="140" placeholder="Deskripsi layanan"></label>
+    <label>Linode service URL<input id="setting-linode" type="url" placeholder="https://your-store.com/linode"></label><label>Linode description<input id="desc-linode" maxlength="140" placeholder="Deskripsi layanan"></label>
+    <label>Pterodactyl panel URL<input id="setting-pterodactyl" type="url" placeholder="https://panel.your-domain.com"></label><label>Pterodactyl description<input id="desc-pterodactyl" maxlength="140" placeholder="Deskripsi panel"></label>
+    <button class="btn primary full" type="submit">Save all settings</button><p class="form-message" id="settings-message"></p>
+   </form><div class="settings-card"><h2>Integration capacity</h2><p class="muted">Slot konfigurasi maksimum yang disiapkan untuk integrasi provider.</p>
+    <div class="capacity-row"><span>DigitalOcean API</span><b>10 slots</b></div><div class="capacity-row"><span>Linode API</span><b>5 slots</b></div><div class="capacity-row"><span>Pterodactyl panels / servers</span><b>5 slots</b></div>
+    <div class="security-note"><b>API credentials</b><p>Token API harus disimpan sebagai Environment Variables rahasia di Vercel. Project ini menyiapkan kapasitas slot; provisioning otomatis perlu endpoint server-side dan pengujian kredensial sebelum digunakan.</p></div>
+    <h2 style="margin-top:28px">Maintenance mode</h2><p class="muted">Tutup akses member sementara saat ada pemeliharaan.</p><label class="switch-row"><span>Enable maintenance</span><input type="checkbox" id="maintenance-toggle"></label><p class="form-message" id="maintenance-message"></p>
+   </div></div>
+  </section>
+ </main>
+</div>
+<script src="/config.js"></script><script type="module" src="/index.js"></script>
+</body></html>

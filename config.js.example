@@ -1,0 +1,4 @@
+// Copy this file to config.js and set your Supabase public project values.
+// config.js is loaded before index.js. Never put a service-role key here.
+window.RIXZ_SUPABASE_URL = "https://YOUR_PROJECT.supabase.co";
+window.RIXZ_SUPABASE_ANON_KEY = "YOUR_SUPABASE_ANON_KEY";
